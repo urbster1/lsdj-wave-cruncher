@@ -12,7 +12,7 @@ flags.defineBoolean('exp', false, 'Exponential interpolation?')
 
 // check usage
 if (process.argv.length < 4) {
-  console.log('Usage: node crunch.js [SOUND.WAV] [NOTE|BASE FREQUENCY|auto]')
+  console.log('Usage: node crunch.js [SOUND.WAV] [NOTE|BASE FREQUENCY|auto] [--linear|--exp] [--normalize] [--channel=0]')
   process.exit(1)
 }
 // parse flags
