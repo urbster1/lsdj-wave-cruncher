@@ -13,7 +13,7 @@ flags.defineString('output', '', 'Output filename')
 
 // check usage
 if (process.argv.length < 4) {
-  console.log('Usage: crunch [SOUND.WAV] [NOTE|BASE FREQUENCY|auto] [--linear|--exp] [--normalize] [--channel=0]')
+  console.log('Usage: crunch [SOUND.WAV] [NOTE|BASE FREQUENCY|auto] [--linear|--exp] [--normalize] [--channel=0] [--output=filename]')
   process.exit(1)
 }
 // parse flags
