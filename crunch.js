@@ -9,10 +9,11 @@ flags.defineBoolean('normalize', false, 'Normalize the wave ?')
 flags.defineBoolean('channel', 0, 'Channel for data?')
 flags.defineBoolean('linear', false, 'Linear interpolation?')
 flags.defineBoolean('exp', false, 'Exponential interpolation?')
+flags.defineString('output', '', 'Output filename')
 
 // check usage
 if (process.argv.length < 4) {
-  console.log('Usage: node crunch.js [SOUND.WAV] [NOTE|BASE FREQUENCY|auto] [--linear|--exp] [--normalize] [--channel=0]')
+  console.log('Usage: crunch [SOUND.WAV] [NOTE|BASE FREQUENCY|auto] [--linear|--exp] [--normalize] [--channel=0]')
   process.exit(1)
 }
 // parse flags
@@ -29,7 +30,12 @@ var synthdata = cruncher(process.argv[2], process.argv[3], {
 })
 
 // log
-var filename = path.basename(process.argv[2], path.extname(process.argv[2])) + '.snt'
+var output = flags.get('output')
+if (output.length < 1) {
+	var filename = path.basename(process.argv[2], path.extname(process.argv[2])) + '.snt'
+} else {
+	var filename = output
+}
 console.log("Saving data as " + filename + "...")
 // creating buffer
 var buf = Buffer.from(_.map(_.chunk(synthdata, 2), function (chunk) {
