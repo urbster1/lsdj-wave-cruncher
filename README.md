@@ -10,16 +10,20 @@ lsdj-wave-cruncher is a bundle of scripts allowing an LSDJ user to create waveta
 
 To *crunch* a sample, use :
 ```
-$ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY|auto] [--linear|--exp] --normalize --channel=0
+$ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY|auto]
 ```
 * *[SAMPLE.WAV]* is the file that'll be crunched.
 * *[NOTE|FREQUENCY|auto]* is either the note at which the sample is (ex: C4, D4), its frequency (ex: 440 Hz), or auto to auto-detect the frequency.
-* *--linear or --exp*, if present, will interpolate sample data either evenly or exponentially throughought the entire sample, instead of from only the beginning.
-* *--normalize*, if present, will [normalize](https://en.wikipedia.org/wiki/Audio_normalization) the sample.
+**Optional flags:**
+* *--linear or --exp* will interpolate sample data either evenly or exponentially throughought the entire sample, instead of from only the beginning.
+* *--normalize*, will [normalize](https://en.wikipedia.org/wiki/Audio_normalization) the sample.
 * *--channel=0* specifies the channel where the sound data will be taken. If not present, it defaults to the 1st channel (0). This parameter is only relevant for stereo sound.
-
+* *--output=filename* will specify an output filename for the .snt (default is same name of wave file but with .snt extension)
+* *--analyze* will analyze the waveform only and will not output a .snt file (useful for testing if pitch detection fails).
 
 ## patching
+
+<h1>Note: I no longer recommend using the patcher from this repository. Please use the LSDJ Wavetable Importer from [libLSDJ](https://github.com/stijnfrishert/liblsdj/releases)</h1>
 
 **Patching** a synth is writing the binary .snt data into a LSDJ song.
 
