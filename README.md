@@ -14,6 +14,7 @@ $ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY|auto]
 ```
 * *[SAMPLE.WAV]* is the file that'll be crunched.
 * *[NOTE|FREQUENCY|auto]* is either the note at which the sample is (ex: C4, D4), its frequency (ex: 440 Hz), or auto to auto-detect the frequency.
+
 **Optional flags:**
 * *--linear or --exp* will interpolate sample data either evenly or exponentially throughought the entire sample, instead of from only the beginning.
 * *--normalize*, will [normalize](https://en.wikipedia.org/wiki/Audio_normalization) the sample.
