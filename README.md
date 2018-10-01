@@ -23,7 +23,7 @@ $ node crunch.js [SAMPLE.WAV] [NOTE|FREQUENCY|auto]
 
 ## patching
 
-<h1>Note: I no longer recommend using the patcher from this repository. Please use the LSDJ Wavetable Importer from [libLSDJ](https://github.com/stijnfrishert/liblsdj/releases)</h1>
+<h1>Note: I no longer recommend using the patcher from this repository. Please use the LSDJ Wavetable Importer from <a href="https://github.com/stijnfrishert/liblsdj/releases">libLSDJ</a>. </h1>
 
 **Patching** a synth is writing the binary .snt data into a LSDJ song.
 
